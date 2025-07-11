@@ -51,5 +51,17 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker kayıt başarılı:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('ServiceWorker kayıt başarısız:', error);
+      });
+  }
+</script>
+
 </body>
 </html>
